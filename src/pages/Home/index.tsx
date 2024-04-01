@@ -1,8 +1,10 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import React from 'react';
 import {PageHeader, Gap, Button} from '../../components';
+import {useNavigation} from '@react-navigation/native';
 
-const Home = ({navigation}) => {
+const Home = () => {
+  const navigation = useNavigation();
   return (
     <ScrollView style={styles.container}>
       <PageHeader type="withPhoto" />
@@ -29,14 +31,14 @@ const Home = ({navigation}) => {
           label="Cash on Hand"
           backgroundColor="#02CF8E"
           textColor="#020202"
-          onPress={() => navigation.navigate('CashonHand')}
+          onPress={() => navigation.navigate('CashOnHand')}
         />
         <Gap height={20} />
         <Button
           label="Cash on Bank"
           backgroundColor="#02CF8E"
           textColor="#020202"
-          onPress={() => navigation.navigate('CashonBank')}
+          onPress={() => navigation.navigate('CashOnBank')}
         />
         <Gap height={30} />
       </View>
